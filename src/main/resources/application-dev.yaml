@@ -1,0 +1,55 @@
+spring:
+  threads:
+    virtual:
+      enabled: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/autosync
+    username: username
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.MySQLDialect
+  mail:
+    host: localhost
+    port: 1025
+    username: dev
+    password: dev
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enable: true
+        connectiontimout: 5000
+        timeout: 3000
+        writetimeout: 5000
+
+application:
+  security:
+    jwt:
+      secret-key: 9870989F9AS098098AS09809DA980A9800DASSWAAITBNIU
+      expiration: 8640000
+  mailing:
+    frontend:
+      consult_url: http://localhost:4200/relato/
+      activate_account: http://localhost:4200/auth/activate_account
+
+minio:
+  config:
+    bucket-image-profile-name: imageprofile
+    access-key: minioadmin
+    secret-key: minioadmin123
+  url: http://localhost:9000
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
