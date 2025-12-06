@@ -17,6 +17,10 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Table(
+        name = "tscar_comp",
+        indexes = @Index(name = "idx_tscar_comp_cnpj", columnList = "tscar_cnpj_comp")
+)
 public class Company extends BaseEntity {
 
     @Id
