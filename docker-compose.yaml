@@ -45,3 +45,5 @@ services:
 volumes:
   mysql:
     driver: local
+  minio_data:
+    driver: local
