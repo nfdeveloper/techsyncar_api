@@ -3,9 +3,9 @@ spring:
     virtual:
       enabled: true
   datasource:
-    url: jdbc:mysql://localhost:3306/autosync
-    username: username
-    password: password
+    url: jdbc:mysql://localhost:3306/${MYSQL_DATABASE}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
@@ -44,8 +44,8 @@ application:
 minio:
   config:
     bucket-image-profile-name: imageprofile
-    access-key: minioadmin
-    secret-key: minioadmin123
+    access-key: ${MINIO_ROOT_USER}
+    secret-key: ${MINIO_ROOT_PASSWORD}
   url: http://localhost:9000
 
 logging:
